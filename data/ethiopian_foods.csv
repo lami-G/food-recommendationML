@@ -1,0 +1,76 @@
+Name,Category,MealTime,Calories,Protein,Carbs,Fat,Fiber,SpiceLevel,IsVegetarian,PrepTime,Description,Ingredients,BMICategory,Reason,Cuisine
+Genfo,Breakfast,Breakfast,280,8,50,6,3,None,Yes,20,Thick porridge served with spiced butter,"barley flour;water;kibbe;berbere",Underweight,High in carbs and healthy fats to help gain weight,Ethiopian
+Chechebsa,Breakfast,Breakfast,350,8,42,16,3,Medium,Yes,25,Shredded flatbread with spiced butter,"flour;kibbe;berbere;sugar",Underweight,Calorie-dense breakfast to support weight gain,Ethiopian
+Fatira,Breakfast,Breakfast,380,10,55,14,2,None,Yes,30,Layered fried bread with honey,"flour;eggs;butter;honey",Underweight,High calorie traditional bread for energy,Ethiopian
+Kinche Be Kibbe,Breakfast,Breakfast,320,10,48,10,5,None,Yes,25,Cracked wheat with spiced butter,"cracked wheat;kibbe;cardamom",Underweight,Nutritious whole grain with healthy fats,Ethiopian
+Atmit,Breakfast,Breakfast,220,6,40,4,3,None,Yes,15,Thick oat porridge drink,"oat flour;water;honey;milk",Underweight,Easy to digest calorie source for weight gain,Ethiopian
+Enqulal Be Kibbe,Breakfast,Breakfast,340,16,12,26,1,Low,No,15,Eggs fried in spiced butter,"eggs;kibbe;onions;peppers",Underweight,High protein and fat for healthy weight gain,Ethiopian
+Firfir,Breakfast,Breakfast,320,10,45,12,4,Medium,Yes,15,Shredded injera mixed with berbere sauce,"injera;berbere;onions;oil;tomatoes",Normal,Balanced meal with good carbs and moderate calories,Ethiopian
+Ful Medames,Breakfast,Breakfast,290,14,40,8,10,Low,Yes,25,Spiced fava bean dish,"fava beans;onions;tomatoes;oil;cumin;garlic",Normal,High protein and fiber for sustained energy,Ethiopian
+Kinche,Breakfast,Breakfast,250,9,45,4,5,None,Yes,20,Cracked wheat porridge with butter,"cracked wheat;butter;salt",Normal,Whole grain breakfast with balanced nutrition,Ethiopian
+Enqulal Firfir,Breakfast,Breakfast,300,15,30,14,2,Medium,No,15,Scrambled eggs with injera pieces,"eggs;injera;onions;tomatoes;butter",Normal,High protein breakfast for muscle maintenance,Ethiopian
+Enqulal Tibs,Breakfast,Breakfast,180,14,6,12,1,Low,No,10,Ethiopian scrambled eggs light version,"eggs;onions;tomatoes;peppers",Overweight,High protein low carb for weight control,Ethiopian
+Kinche Light,Breakfast,Breakfast,180,8,32,3,5,None,Yes,20,Cracked wheat porridge without butter,"cracked wheat;water;salt",Overweight,Whole grain low fat breakfast option,Ethiopian
+Oatmeal Plain,Breakfast,Breakfast,150,5,27,3,4,None,Yes,10,Simple oatmeal with water,"oats;water;cinnamon",Obese,Very low calorie filling breakfast,International
+Egg White Omelette,Breakfast,Breakfast,120,18,2,4,0,None,No,10,Egg whites with vegetables,"egg whites;spinach;tomatoes;onions",Obese,High protein zero fat breakfast,International
+Fruit Salad,Breakfast,Breakfast,100,1,25,0,4,None,Yes,10,Mixed fresh fruits,"banana;apple;orange;papaya",Obese,Low calorie vitamin rich breakfast,International
+Greek Yogurt,Breakfast,Breakfast,130,15,8,4,0,None,Yes,0,Plain low fat yogurt,"yogurt;honey",Obese,High protein low calorie breakfast,International
+Doro Wot,Main Dish,Lunch,450,35,15,28,2,High,No,90,Spicy chicken stew with berbere and eggs,"chicken;onions;berbere;butter;eggs;garlic;ginger",Underweight,High protein and calorie-rich for healthy weight gain,Ethiopian
+Yebeg Wot,Main Dish,Lunch,420,30,12,28,2,High,No,80,Spicy lamb stew with berbere,"lamb;onions;berbere;butter;garlic",Underweight,Rich in protein and healthy fats for weight gain,Ethiopian
+Yebeg Tibs,Main Dish,Lunch,400,28,10,28,1,Medium,No,35,Sauteed lamb with vegetables,"lamb;onions;peppers;rosemary;garlic",Underweight,Calorie-dense protein source for gaining weight,Ethiopian
+Kitfo Special,Main Dish,Lunch,420,32,4,30,0,Medium,No,15,Ethiopian beef tartare extra portion,"raw beef;mitmita;kibbe;ayib",Underweight,Very high protein and fat for weight gain,Ethiopian
+Siga Wot,Main Dish,Lunch,380,32,12,24,2,High,No,75,Spicy beef stew with berbere,"beef;onions;berbere;butter;garlic;ginger",Underweight,Protein-rich stew for building mass,Ethiopian
+Pasta with Meat Sauce,Main Dish,Lunch,480,22,55,18,3,Low,No,30,Spaghetti with beef sauce,"pasta;beef;tomatoes;onions;garlic",Underweight,High carb high protein for weight gain,International
+Chicken Rice Bowl,Main Dish,Lunch,450,30,50,12,2,Low,No,25,Grilled chicken with rice,"chicken;rice;vegetables;oil",Underweight,Balanced high calorie meal,International
+Tibs,Main Dish,Lunch,380,32,8,24,1,Medium,No,25,Sauteed meat with vegetables,"beef;onions;tomatoes;peppers;rosemary;garlic",Normal,Lean protein with vegetables for balanced diet,Ethiopian
+Shiro,Main Dish,Lunch,280,15,35,8,6,Medium,Yes,30,Chickpea flour stew with berbere,"chickpea flour;onions;garlic;berbere;oil",Normal,Plant protein with fiber for balanced nutrition,Ethiopian
+Beyaynetu,Main Dish,Lunch,400,18,55,12,10,Medium,Yes,60,Vegetarian platter with various dishes,"injera;shiro;gomen;misir;salad",Normal,Variety of nutrients in one balanced meal,Ethiopian
+Zilzil Tibs,Main Dish,Lunch,360,34,6,22,1,Medium,No,30,Strip-cut beef sauteed with peppers,"beef strips;onions;peppers;rosemary;oil",Normal,High protein for muscle maintenance,Ethiopian
+Derek Tibs,Main Dish,Lunch,350,30,8,22,1,Medium,No,20,Dry-fried beef cubes with peppers,"beef;onions;peppers;oil;rosemary",Normal,Lean protein option with moderate fat,Ethiopian
+Awaze Tibs,Main Dish,Lunch,370,31,10,23,1,High,No,25,Beef sauteed in awaze sauce,"beef;awaze;onions;peppers;oil",Normal,Spicy protein dish for metabolism boost,Ethiopian
+Grilled Chicken Salad,Main Dish,Lunch,280,32,12,12,4,Low,No,20,Chicken breast on mixed greens,"chicken;lettuce;tomatoes;cucumber;olive oil",Normal,High protein balanced meal,International
+Misir Wot,Main Dish,Lunch,260,12,38,6,8,High,Yes,45,Spicy red lentil stew,"red lentils;onions;berbere;garlic;oil",Overweight,High fiber low fat helps with weight loss,Ethiopian
+Yekik Alicha,Main Dish,Lunch,230,13,32,6,8,Low,Yes,45,Mild yellow split pea stew,"split peas;onions;turmeric;garlic;ginger",Overweight,Filling high fiber meal for weight control,Ethiopian
+Shiro Light,Main Dish,Lunch,200,12,28,5,6,Medium,Yes,25,Light version chickpea stew less oil,"chickpea flour;onions;garlic;berbere",Overweight,Lower calorie plant protein option,Ethiopian
+Grilled Fish,Main Dish,Lunch,200,35,0,6,0,Low,No,20,Grilled tilapia or salmon,"fish;lemon;herbs;olive oil",Overweight,Very high protein low calorie option,International
+Turkey Breast,Main Dish,Lunch,180,30,0,4,0,Low,No,25,Lean turkey breast grilled,"turkey;herbs;lemon;pepper",Overweight,Lean protein for weight management,International
+Gomen,Main Dish,Lunch,120,4,12,7,4,Low,Yes,20,Ethiopian collard greens,"collard greens;garlic;ginger;onions;oil",Obese,Very low calorie nutritious greens,Ethiopian
+Tikil Gomen,Main Dish,Lunch,140,4,18,6,5,Low,Yes,30,Cabbage and carrots with turmeric,"cabbage;carrots;onions;turmeric;oil",Obese,Low calorie filling vegetable dish,Ethiopian
+Vegetable Soup,Main Dish,Lunch,100,4,15,2,4,Low,Yes,25,Clear vegetable broth soup,"carrots;celery;onions;tomatoes;herbs",Obese,Very low calorie filling soup,International
+Steamed Vegetables,Main Dish,Lunch,80,3,15,1,5,None,Yes,15,Mixed steamed vegetables,"broccoli;carrots;green beans;cauliflower",Obese,Lowest calorie filling option,International
+Salad Bowl,Main Dish,Lunch,90,3,12,4,4,None,Yes,10,Large mixed green salad,"lettuce;cucumber;tomatoes;carrots;lemon",Obese,Very low calorie high volume meal,International
+Kitfo,Main Dish,Dinner,350,30,2,25,0,Medium,No,15,Ethiopian beef tartare with mitmita,"raw beef;mitmita;kibbe;cardamom",Underweight,High protein and fat for healthy weight gain,Ethiopian
+Gomen Be Siga,Main Dish,Dinner,320,25,15,18,5,Low,No,40,Collard greens with beef,"collard greens;beef;onions;garlic;ginger",Underweight,Protein with vegetables for balanced gain,Ethiopian
+Dulet,Main Dish,Dinner,340,28,8,22,1,High,No,35,Minced tripe and liver spiced,"tripe;liver;onions;peppers;mitmita;kibbe",Underweight,Organ meat high in nutrients and calories,Ethiopian
+Beef Steak,Main Dish,Dinner,400,38,0,26,0,Low,No,20,Grilled beef steak,"beef steak;butter;garlic;herbs",Underweight,High protein high fat for weight gain,International
+Salmon with Rice,Main Dish,Dinner,420,32,35,16,2,Low,No,25,Grilled salmon with brown rice,"salmon;rice;lemon;herbs;olive oil",Underweight,Healthy fats and protein for gaining,International
+Atkilt Wot,Main Dish,Dinner,180,5,25,8,6,Low,Yes,35,Cabbage potato and carrot stew,"cabbage;potatoes;carrots;onions;turmeric",Normal,Balanced vegetable dish,Ethiopian
+Yemisir Kik,Main Dish,Dinner,240,14,35,5,9,Low,Yes,40,Yellow split pea stew,"split peas;onions;turmeric;garlic;oil",Normal,High fiber protein for dinner,Ethiopian
+Azifa,Side Dish,Dinner,220,12,30,6,8,Low,Yes,15,Green lentil salad with lemon,"green lentils;onions;peppers;lemon;oil",Normal,High fiber protein salad,Ethiopian
+Grilled Chicken,Main Dish,Dinner,250,35,2,10,0,Low,No,25,Simple grilled chicken breast,"chicken;lemon;herbs;olive oil",Normal,Lean protein for dinner,International
+Dinich Wot Light,Main Dish,Dinner,160,4,28,4,4,Medium,Yes,40,Light spiced potato stew,"potatoes;onions;berbere;garlic",Overweight,Moderate calories filling dinner,Ethiopian
+Yemisir Selata,Side Dish,Dinner,170,10,25,4,7,None,Yes,10,Cold lentil salad light dressing,"lentils;onions;peppers;lemon",Overweight,High fiber low fat dinner option,Ethiopian
+Buticha,Side Dish,Dinner,150,10,18,4,5,Low,Yes,20,Chickpea dip similar to hummus,"chickpeas;onions;peppers;lemon;oil",Overweight,Plant protein for weight management,Ethiopian
+Baked Fish,Main Dish,Dinner,180,32,0,5,0,Low,No,30,Oven baked white fish,"fish;lemon;herbs;garlic",Overweight,Very lean protein dinner,International
+Gomen Plain,Side Dish,Dinner,80,3,10,4,4,Low,Yes,20,Collard greens minimal oil,"collard greens;garlic;ginger;onions",Obese,Very low calorie greens,Ethiopian
+Ayib,Side Dish,Dinner,100,8,3,6,0,None,Yes,30,Fresh Ethiopian cottage cheese,"milk;lemon juice;salt",Obese,Low calorie high protein,Ethiopian
+Fossolia,Side Dish,Dinner,100,4,14,4,5,Low,Yes,25,Green beans and carrots light,"green beans;carrots;onions;garlic",Obese,Very low calorie vegetable side,Ethiopian
+Yatakilt Kilkil,Main Dish,Dinner,130,4,20,5,5,Low,Yes,35,Mixed vegetables mild sauce,"potatoes;carrots;cabbage;onions;turmeric",Obese,Low calorie filling vegetables,Ethiopian
+Cucumber Salad,Side Dish,Dinner,50,1,8,2,2,None,Yes,5,Fresh cucumber with lemon,"cucumber;lemon;salt;herbs",Obese,Extremely low calorie refreshing,International
+Steamed Fish,Main Dish,Dinner,140,28,0,3,0,None,No,20,Plain steamed white fish,"fish;lemon;ginger;herbs",Obese,Lowest calorie protein option,International
+Vegetable Stir Fry,Main Dish,Dinner,110,4,16,4,5,Low,Yes,15,Mixed vegetables no oil,"broccoli;peppers;onions;garlic;soy sauce",Obese,Low calorie filling dinner,International
+Injera,Bread,All,150,5,30,1,3,Low,Yes,60,Traditional teff flatbread,"teff flour;water;yeast",Normal,Whole grain bread with iron and fiber,Ethiopian
+Dabo,Bread,All,250,8,45,5,3,None,Yes,90,Ethiopian honey bread,"flour;honey;eggs;butter;yeast",Underweight,Calorie-rich bread for weight gain,Ethiopian
+Himbasha,Bread,All,280,7,48,7,2,None,Yes,60,Celebratory sweet bread,"flour;sugar;butter;eggs;cardamom",Underweight,Sweet bread provides extra calories,Ethiopian
+Whole Wheat Bread,Bread,All,120,5,22,2,3,None,Yes,0,Simple whole wheat slice,"whole wheat flour;water;yeast",Overweight,Lower calorie bread option,International
+Rice Cake,Bread,All,35,1,7,0,0,None,Yes,0,Plain puffed rice cake,"rice",Obese,Very low calorie bread substitute,International
+Kategna,Snack,Snack,200,6,28,8,2,Medium,Yes,10,Toasted injera with berbere,"injera;berbere;kibbe",Normal,Light snack with balanced nutrients,Ethiopian
+Sambusa,Snack,Snack,180,6,20,9,2,Medium,Yes,40,Ethiopian fried pastry lentil filling,"flour;lentils;onions;peppers;oil",Normal,Protein-filled snack for energy,Ethiopian
+Kolo,Snack,Snack,380,12,55,14,8,None,Yes,15,Roasted barley chickpea snack,"barley;chickpeas;peanuts;salt",Underweight,High calorie nutritious snack,Ethiopian
+Dabo Kolo,Snack,Snack,350,9,52,12,4,Medium,Yes,45,Small crunchy bread snacks,"flour;berbere;oil;salt",Underweight,Crunchy calorie-dense snack,Ethiopian
+Peanut Butter Toast,Snack,Snack,320,12,30,18,4,None,Yes,5,Bread with peanut butter,"bread;peanut butter",Underweight,High calorie protein snack,International
+Banana Smoothie,Snack,Snack,280,8,50,6,4,None,Yes,5,Banana milk smoothie,"banana;milk;honey;oats",Underweight,Easy calories for weight gain,International
+Lebleb,Snack,Snack,160,9,22,4,6,Low,Yes,10,Roasted chickpeas snack,"chickpeas;salt;spices",Overweight,High protein low fat healthy snack,Ethiopian
+Apple Slices,Snack,Snack,60,0,15,0,3,None,Yes,5,Fresh apple slices,"apple",Obese,Low calorie healthy snack,International
+Carrot Sticks,Snack,Snack,40,1,9,0,3,None,Yes,5,Raw carrot sticks,"carrots",Obese,Very low calorie crunchy snack,International
+Cucumber Slices,Snack,Snack,20,1,4,0,1,None,Yes,5,Fresh cucumber slices,"cucumber",Obese,Extremely low calorie snack,International
