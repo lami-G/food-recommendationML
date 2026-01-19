@@ -237,6 +237,7 @@ st.sidebar.title("📋 Menu")
 page = st.sidebar.radio("Choose:", [
     "🏠 Home",
     "⚖️ BMI & Diet Plan",
+    "🔍 Food Classifier",
     "📂 Browse Foods",
     "🧠 How the ML Works"
 ])
@@ -407,6 +408,306 @@ elif page == "⚖️ BMI & Diet Plan":
             "Percentage": ["30%", "40%", "30%", "100%"]
         })
         st.table(summary_df)
+
+# ============ FOOD CLASSIFIER ============
+elif page == "🔍 Food Classifier":
+    st.header("🔍 Food Classifier - Predict BMI Category")
+    st.write("Enter nutrition values and let the AI predict which BMI category this food belongs to!")
+    
+    # Add the KNN classifier function
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import accuracy_score
+    
+    st.subheader("Step 1: Enter Food Information")
+    
+    # Food name input
+    food_name = st.text_input("Food Name (optional)", 
+                             placeholder="e.g., My Special Recipe, Homemade Stew, etc.",
+                             help="Give your food a name to personalize the results!")
+    
+    st.subheader("Step 2: Enter Nutrition Values")
+    
+    col1, col2, col3, col4, col5 = st.columns(5)
+    
+    with col1:
+        calories = st.number_input("Calories", min_value=0, max_value=1000, value=200, step=10)
+    with col2:
+        protein = st.number_input("Protein (g)", min_value=0, max_value=100, value=12, step=1)
+    with col3:
+        carbs = st.number_input("Carbs (g)", min_value=0, max_value=200, value=25, step=1)
+    with col4:
+        fat = st.number_input("Fat (g)", min_value=0, max_value=100, value=5, step=1)
+    with col5:
+        fiber = st.number_input("Fiber (g)", min_value=0, max_value=50, value=4, step=1)
+    
+    # Quick preset buttons
+    st.subheader("Or Try These Presets:")
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        if st.button("🔵 High Calorie Food", help="Example: Doro Wot"):
+            st.session_state.preset_food = "High Calorie Food (like Doro Wot)"
+            st.session_state.preset_nutrition = [450, 30, 20, 25, 2]
+            st.rerun()
+    
+    with col2:
+        if st.button("🟢 Balanced Food", help="Example: Shiro"):
+            st.session_state.preset_food = "Balanced Food (like Shiro)"
+            st.session_state.preset_nutrition = [280, 15, 35, 8, 6]
+            st.rerun()
+    
+    with col3:
+        if st.button("🟡 Low Calorie Food", help="Example: Grilled Fish"):
+            st.session_state.preset_food = "Low Calorie Food (like Grilled Fish)"
+            st.session_state.preset_nutrition = [180, 32, 5, 4, 0]
+            st.rerun()
+    
+    with col4:
+        if st.button("🔴 Very Low Calorie", help="Example: Gomen"):
+            st.session_state.preset_food = "Very Low Calorie Food (like Gomen)"
+            st.session_state.preset_nutrition = [120, 4, 12, 7, 4]
+            st.rerun()
+    
+    # Handle preset selection
+    if hasattr(st.session_state, 'preset_food') and hasattr(st.session_state, 'preset_nutrition'):
+        food_name = st.session_state.preset_food
+        calories, protein, carbs, fat, fiber = st.session_state.preset_nutrition
+        # Clear the session state
+        del st.session_state.preset_food
+        del st.session_state.preset_nutrition
+    
+    if st.button("🤖 Classify This Food", type="primary"):
+        
+        # Use custom name or default
+        display_name = food_name.strip() if food_name.strip() else "Your Food"
+        
+        # Prepare the data for classification
+        nutrition_cols = ['Calories', 'Protein', 'Carbs', 'Fat', 'Fiber']
+        X = df[nutrition_cols].values
+        y = df['BMICategory'].values
+        
+        # Split and train the model
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+        
+        # Scale the features
+        scaler = StandardScaler()
+        X_train_scaled = scaler.fit_transform(X_train)
+        X_test_scaled = scaler.transform(X_test)
+        
+        # Train KNN classifier
+        knn = KNeighborsClassifier(n_neighbors=5)
+        knn.fit(X_train_scaled, y_train)
+        
+        # Test accuracy
+        y_pred = knn.predict(X_test_scaled)
+        accuracy = accuracy_score(y_test, y_pred)
+        
+        # Predict the user's food
+        user_food = np.array([[calories, protein, carbs, fat, fiber]])
+        user_food_scaled = scaler.transform(user_food)
+        
+        # Get prediction and probabilities
+        predicted_category = knn.predict(user_food_scaled)[0]
+        probabilities = knn.predict_proba(user_food_scaled)[0]
+        classes = knn.classes_
+        
+        # Get nearest neighbors for explanation
+        distances, indices = knn.kneighbors(user_food_scaled, n_neighbors=5)
+        
+        st.markdown("---")
+        
+        # Results
+        st.subheader("🎯 Classification Results")
+        
+        # Show the food name prominently
+        if display_name != "Your Food":
+            st.markdown(f"### 🍽️ **{display_name}**")
+            st.write(f"**Nutrition:** {calories} cal, {protein}g protein, {carbs}g carbs, {fat}g fat, {fiber}g fiber")
+        else:
+            st.write(f"**Your Food:** {calories} cal, {protein}g protein, {carbs}g carbs, {fat}g fat, {fiber}g fiber")
+        
+        st.markdown("---")
+        
+        # Main prediction
+        category_colors = {"Underweight": "#3498db", "Normal": "#2ecc71", "Overweight": "#f39c12", "Obese": "#e74c3c"}
+        category_emojis = {"Underweight": "🔵", "Normal": "🟢", "Overweight": "🟡", "Obese": "🔴"}
+        
+        predicted_color = category_colors.get(predicted_category, "#000000")
+        predicted_emoji = category_emojis.get(predicted_category, "")
+        
+        st.markdown(f"""
+        <div style="background-color: {predicted_color}; padding: 20px; border-radius: 10px; text-align: center; color: white; font-size: 24px; margin: 20px 0;">
+            <strong>{predicted_emoji} "{display_name}" is classified as: {predicted_category.upper()}</strong>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Confidence scores
+        st.subheader("📊 Confidence Scores")
+        
+        confidence_df = pd.DataFrame({
+            "BMI Category": classes,
+            "Probability": probabilities,
+            "Percentage": [f"{p*100:.1f}%" for p in probabilities]
+        }).sort_values('Probability', ascending=False)
+        
+        # Create a bar chart for confidence
+        st.subheader("📊 Confidence Chart")
+        
+        # Use Streamlit's built-in bar chart
+        chart_data = pd.DataFrame({
+            'Category': confidence_df["BMI Category"],
+            'Confidence': confidence_df["Probability"]
+        }).set_index('Category')
+        
+        st.bar_chart(chart_data)
+        
+        # Show confidence table
+        st.table(confidence_df)
+        
+        # Similar foods explanation
+        st.subheader("🔍 Why This Classification?")
+        st.write("Here are the 5 most similar foods that the KNN model actually used for prediction:")
+        
+        # Get the actual training data neighbors (not full dataset)
+        similar_foods_indices = indices[0]
+        
+        # Map training indices back to original dataset
+        training_foods_info = []
+        for i, train_idx in enumerate(similar_foods_indices):
+            distance = distances[0][i]
+            
+            # Find the corresponding food in the original dataset
+            # This is tricky because we need to match the training data back to original
+            train_nutrition = X_train[train_idx]
+            train_category = y_train[train_idx]
+            
+            # Find matching food in original dataset
+            matching_food = None
+            for orig_idx, orig_row in df.iterrows():
+                orig_nutrition = [orig_row['Calories'], orig_row['Protein'], orig_row['Carbs'], orig_row['Fat'], orig_row['Fiber']]
+                if np.allclose(train_nutrition, orig_nutrition, rtol=1e-5):
+                    matching_food = orig_row
+                    break
+            
+            if matching_food is not None:
+                training_foods_info.append({
+                    'food': matching_food,
+                    'category': train_category,
+                    'distance': distance,
+                    'rank': i + 1
+                })
+            else:
+                # Fallback: create a generic entry
+                training_foods_info.append({
+                    'food': None,
+                    'category': train_category,
+                    'distance': distance,
+                    'rank': i + 1,
+                    'nutrition': train_nutrition
+                })
+        
+        # Count actual votes
+        actual_votes = {}
+        for info in training_foods_info:
+            cat = info['category']
+            actual_votes[cat] = actual_votes.get(cat, 0) + 1
+        
+        # Show vote count
+        st.subheader("🗳️ Actual KNN Voting")
+        vote_df = pd.DataFrame([
+            {"BMI Category": cat, "Votes": count, "Percentage": f"{count/5*100:.1f}%"}
+            for cat, count in sorted(actual_votes.items(), key=lambda x: x[1], reverse=True)
+        ])
+        st.table(vote_df)
+        
+        # Show the actual neighbors
+        for info in training_foods_info:
+            similarity_pct = max(0, (2 - info['distance']) / 2 * 100)
+            
+            if info['food'] is not None:
+                food = info['food']
+                with st.expander(f"#{info['rank']} Most Similar: {food['Name']} ({info['category']}) - {similarity_pct:.1f}% similar"):
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        st.write(f"**Nutrition:**")
+                        st.write(f"- Calories: {food['Calories']} (vs {display_name}: {calories})")
+                        st.write(f"- Protein: {food['Protein']}g (vs {display_name}: {protein}g)")
+                        st.write(f"- Carbs: {food['Carbs']}g (vs {display_name}: {carbs}g)")
+                        st.write(f"- Fat: {food['Fat']}g (vs {display_name}: {fat}g)")
+                        st.write(f"- Fiber: {food['Fiber']}g (vs {display_name}: {fiber}g)")
+                    
+                    with col2:
+                        st.write(f"**Food Details:**")
+                        st.write(f"**Category:** {info['category']}")
+                        st.write(f"**Cuisine:** {food['Cuisine']}")
+                        st.write(f"**Meal Time:** {food['MealTime']}")
+                        st.success(f"**Reason:** {food['Reason']}")
+            else:
+                # Fallback for foods we couldn't match
+                nutrition = info['nutrition']
+                with st.expander(f"#{info['rank']} Most Similar: Training Food ({info['category']}) - {similarity_pct:.1f}% similar"):
+                    st.write(f"**Nutrition from Training Data:**")
+                    st.write(f"- Calories: {nutrition[0]:.0f} (vs {display_name}: {calories})")
+                    st.write(f"- Protein: {nutrition[1]:.0f}g (vs {display_name}: {protein}g)")
+                    st.write(f"- Carbs: {nutrition[2]:.0f}g (vs {display_name}: {carbs}g)")
+                    st.write(f"- Fat: {nutrition[3]:.0f}g (vs {display_name}: {fat}g)")
+                    st.write(f"- Fiber: {nutrition[4]:.0f}g (vs {display_name}: {fiber}g)")
+                    st.write(f"**Category:** {info['category']}")
+        
+        # Explanation of the voting
+        winner_cat = max(actual_votes.items(), key=lambda x: x[1])
+        st.info(f"**KNN Decision:** {winner_cat[0]} won with {winner_cat[1]}/5 votes ({winner_cat[1]/5*100:.1f}%)")
+        
+        if predicted_category == winner_cat[0]:
+            st.success("✅ The prediction matches the majority vote from the 5 nearest neighbors!")
+        else:
+            st.error(f"🚨 Bug detected: Prediction ({predicted_category}) doesn't match majority vote ({winner_cat[0]})")
+        
+        # Model accuracy info
+        st.subheader("🎯 Model Performance")
+        st.info(f"**Model Accuracy:** {accuracy:.1%} on test data ({len(X_test)} foods)")
+        st.write(f"**Training Data:** {len(X_train)} foods")
+        st.write(f"**Algorithm:** K-Nearest Neighbors (K=5)")
+        
+        # Nutritional analysis
+        st.subheader("📈 Nutritional Analysis")
+        
+        # Calculate ratios
+        protein_ratio = protein / calories if calories > 0 else 0
+        fat_ratio = fat / calories if calories > 0 else 0
+        fiber_ratio = fiber / calories if calories > 0 else 0
+        
+        analysis_df = pd.DataFrame({
+            "Metric": ["Protein/Calorie Ratio", "Fat/Calorie Ratio", "Fiber/Calorie Ratio"],
+            "Your Food": [f"{protein_ratio:.3f}", f"{fat_ratio:.3f}", f"{fiber_ratio:.3f}"],
+            "Underweight Avg": ["0.053", "0.047", "0.008"],
+            "Normal Avg": ["0.061", "0.039", "0.016"],
+            "Overweight Avg": ["0.081", "0.027", "0.022"],
+            "Obese Avg": ["0.051", "0.027", "0.034"]
+        })
+        
+        st.table(analysis_df)
+        
+        # Recommendations based on prediction
+        st.subheader("💡 Recommendations")
+        
+        if predicted_category == "Underweight":
+            st.success("✅ This food is suitable for people trying to **gain weight**")
+            st.write("- High calorie density helps with healthy weight gain")
+            st.write("- Good for underweight individuals or athletes")
+        elif predicted_category == "Normal":
+            st.success("✅ This food is suitable for **maintaining healthy weight**")
+            st.write("- Balanced nutrition profile")
+            st.write("- Good for general population")
+        elif predicted_category == "Overweight":
+            st.warning("⚠️ This food is suitable for **gradual weight loss**")
+            st.write("- Moderate calories with good protein content")
+            st.write("- Helps preserve muscle during weight loss")
+        else:  # Obese
+            st.error("🔴 This food is suitable for **significant weight loss**")
+            st.write("- Very low calorie density")
+            st.write("- High fiber helps with satiety")
 
 # ============ BROWSE FOODS ============
 elif page == "📂 Browse Foods":
