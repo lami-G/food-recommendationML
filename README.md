@@ -1,92 +1,102 @@
-# 🇪🇹 Ethiopian Food Recommendation System
+# 🍽️ Food Classifier & Recommender
 
-A school machine learning project that calculates BMI and recommends personalized diet plans using Ethiopian and international foods.
+A single-file Streamlit web application with two ML-powered features:
 
-## 📖 What This Project Does
+## 🔍 **Food Classifier**
+- **Input**: Enter nutrition values (calories, protein, carbs, fat, fiber)
+- **AI Process**: K-Nearest Neighbors finds 3 similar foods from training data
+- **Output**: Predicts BMI category with voting breakdown and confidence scores
+- **Shows**: Actual neighbors used, vote counting, similarity percentages
 
-1. **Enter your details** - Age, weight, height, gender
-2. **Calculate BMI** - Body Mass Index
-3. **Get personalized diet** - Breakfast, Lunch, Dinner recommendations
-4. **BMI-specific foods** - Different foods for Underweight, Normal, Overweight, Obese
-5. **🆕 Food Classifier** - Enter nutrition values and predict BMI category using AI
+## 🎯 **Food Recommender** 
+- **Input**: Enter personal details (age, weight, height, gender)
+- **Process**: Calculate BMI → Determine health category → Find ideal nutrition
+- **Output**: Personalized Ethiopian food recommendations by meal time
+- **Organization**: 🌅 Breakfast, ☀️ Lunch, 🌙 Dinner (2 foods each)
 
-## 🧠 Machine Learning Features
+## How to Run
 
-- **Weighted K-Nearest Neighbors (KNN)** algorithm
-- Different feature weights for each BMI category
-- Underweight → Prioritizes HIGH calorie foods
-- Obese → Prioritizes LOW calorie, HIGH fiber foods
-- **🆕 Food Classification** - Predict BMI category from nutrition values
-
-## 🚀 How to Run
-
-### Step 1: Install Python
-Download from https://www.python.org/downloads/
-
-### Step 2: Install Libraries
 ```bash
-cd EthiopianFoodRecommender
-python -m pip install pandas scikit-learn streamlit numpy
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application
+streamlit run food_app.py
 ```
 
-### Step 3: Run the Web App
-```bash
-python -m streamlit run web_app.py
-```
+**Access**: Opens at http://localhost:8501
 
-Opens at **http://localhost:8501**
+## 🏗️ Architecture
 
-## 📱 Web App Features
+**Type**: Single-file Streamlit web application  
+**Backend**: None - everything runs in one Python process  
+**Data**: Local CSV file with caching optimization  
+**ML Models**: Trained in-memory on app startup
 
-### 🏠 Home Page
-- Project overview and dataset statistics
+## ⚙️ Features
 
-### ⚖️ BMI & Diet Plan
-- Calculate your BMI
-- Get personalized food recommendations
-- View daily meal plans
+### Tab 1: Food Classifier
+- Nutrition input fields with validation
+- **KNN Voting Display**: Shows 3 actual neighbors used for prediction
+- **Vote Breakdown**: Category vote counts (e.g., "Overweight: 2/3 votes")
+- **Similarity Scores**: Distance-based similarity percentages
+- **Confidence Scores**: Probability distribution across all categories
+- **Tie Resolution**: Automatic tie-breaking using closest average distance
 
-### 🔍 Food Classifier (NEW!)
-- **Name your food** - Give your recipe a custom name
-- Enter nutrition values (calories, protein, carbs, fat, fiber)
-- AI predicts BMI category (Underweight/Normal/Overweight/Obese)
-- See confidence scores and similar foods
-- Understand why the classification was made
-- **Preset buttons** for quick testing with example foods
+### Tab 2: Food Recommender
+- Personal details input (age, weight, height, gender)
+- **BMI Calculator**: Automatic BMI calculation and categorization
+- **Smart Recommendations**: KNN finds foods closest to ideal nutrition for your BMI
+- **Meal Organization**: 
+  - 🌅 **Breakfast**: 2 recommended foods
+  - ☀️ **Lunch**: 2 recommended foods  
+  - 🌙 **Dinner**: 2 recommended foods
+- **Detailed Info**: Nutrition breakdown and health explanations for each food
 
-### 📂 Browse Foods
-- Filter foods by meal time, BMI category, cuisine
-- Search through all 75+ foods in the dataset
+## 🤖 Machine Learning Details
 
-### 🧠 How the ML Works
-- Detailed explanation of the weighted KNN algorithm
-- Understanding the machine learning process
+- **Algorithm**: K-Nearest Neighbors (K=3) for both classification and recommendation
+- **Preprocessing**: StandardScaler for feature normalization
+- **Training Split**: 70% training (~38 foods) / 30% testing (~16 foods)
+- **Distance Metric**: Euclidean distance for similarity matching
+- **Features**: [Calories, Protein, Carbs, Fat, Fiber]
+- **Tie-Breaking**: Distance-based resolution when vote counts are equal
 
-## 📁 Project Structure
-
-```
-EthiopianFoodRecommender/
-├── web_app.py              # Main web application
-├── data/
-│   └── ethiopian_foods.csv # Food dataset (75+ foods)
-├── requirements.txt        # Python libraries
-└── README.md              # This file
-```
+### How It Works:
+1. **Training**: Model learns from 38 Ethiopian foods with known BMI categories
+2. **Classification**: Finds 3 most similar foods → counts votes → predicts category
+3. **Recommendation**: Defines ideal nutrition per BMI → finds closest matching foods
 
 ## 📊 Dataset
 
-**75+ foods** including:
-- 🇪🇹 Ethiopian: Doro Wot, Kitfo, Shiro, Injera, Gomen, Misir Wot
-- 🌍 International: Oatmeal, Grilled Chicken, Salads, Steamed Vegetables
+**54 Ethiopian Foods** across 4 BMI categories and 5 meal times:
 
-## 🎓 Technologies Used
+### By BMI Category:
+- � **Undewrweight**: 12 high-calorie foods (280-480 cal)
+- � **ONormal**: 14 balanced foods (150-400 cal)  
+- 🟡 **Overweight**: 12 moderate-calorie foods (150-230 cal)
+- 🔴 **Obese**: 16 low-calorie foods (40-150 cal)
 
-- Python
-- Pandas (data handling)
-- Scikit-learn (KNN algorithm)
-- Streamlit (web interface)
-- NumPy (calculations)
+### By Meal Time:
+- � **Breaekfast**: 12 foods (Genfo, Firfir, Ful Medames, etc.)
+- ☀️ **Lunch**: 17 foods (Doro Wot, Shiro, Tibs, etc.)
+- � **Dinner*l*: 17 foods (Kitfo, Grilled Fish, Steamed Vegetables, etc.)
+- 🍿 **Snacks**: 7 foods (Kolo, Sambusa, Lebleb, etc.)
+- 🍞 **All Meals**: 1 food (Injera - Ethiopian staple bread)
 
-## 👨‍🎓 School Project
+**File**: `data/foods.csv` with columns: Name, Calories, Protein, Carbs, Fat, Fiber, BMICategory, MealTime, Reason
 
-Made for learning Machine Learning concepts!
+## 📚 Educational Materials
+
+- **`MyLab2_Food_Class.ipynb`**: Interactive Jupyter notebook with step-by-step KNN learning
+- **`MyLab2_Explanation.md`**: Comprehensive beginner's guide explaining every concept
+
+## 🎯 Key Learning Concepts
+
+1. **K-Nearest Neighbors**: How similarity-based classification works
+2. **Feature Scaling**: Why StandardScaler is essential for distance calculations  
+3. **Train/Test Split**: How models learn and get evaluated
+4. **Voting Systems**: How multiple neighbors contribute to final prediction
+5. **Distance Metrics**: Understanding similarity in multi-dimensional space
+
+Perfect for understanding machine learning fundamentals with real-world Ethiopian food data!

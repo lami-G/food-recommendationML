@@ -1,0 +1,55 @@
+Name,Calories,Protein,Carbs,Fat,Fiber,BMICategory,MealTime,Reason
+Doro Wot,450,35,15,28,2,Underweight,Lunch,High protein and calories for weight gain
+Kitfo,350,30,2,25,0,Underweight,Dinner,High protein and fat for healthy weight gain
+Chechebsa,350,8,42,16,3,Underweight,Breakfast,Calorie-dense breakfast for weight gain
+Genfo,280,8,50,6,3,Underweight,Breakfast,High carbs and healthy fats for weight gain
+Beef Steak,400,38,0,26,0,Underweight,Dinner,High protein high fat for weight gain
+Kolo,380,12,55,14,8,Underweight,Snack,High calorie nutritious snack
+Pasta with Meat,480,22,55,18,3,Underweight,Lunch,High carb high protein for weight gain
+Salmon with Rice,420,32,35,16,2,Underweight,Dinner,Healthy fats and protein for gaining
+Yebeg Wot,420,30,12,28,2,Underweight,Lunch,Rich in protein and healthy fats for weight gain
+Fatira,380,10,55,14,2,Underweight,Breakfast,High calorie traditional bread for energy
+Dabo,320,8,48,10,3,Underweight,Breakfast,Calorie-rich bread for weight gain
+Chicken Rice Bowl,450,30,50,12,2,Underweight,Lunch,Balanced high calorie meal
+Tibs,380,32,8,24,1,Normal,Lunch,Lean protein with vegetables for balanced diet
+Shiro,280,15,35,8,6,Normal,Lunch,Plant protein with fiber for balanced nutrition
+Beyaynetu,400,18,55,12,10,Normal,Lunch,Variety of nutrients in one balanced meal
+Firfir,320,10,45,12,4,Normal,Breakfast,Balanced meal with good carbs and moderate calories
+Ful Medames,290,14,40,8,10,Normal,Breakfast,High protein and fiber for sustained energy
+Kinche,250,9,45,4,5,Normal,Breakfast,Whole grain breakfast with balanced nutrition
+Grilled Chicken,250,35,2,10,0,Normal,Dinner,Lean protein for dinner
+Injera,150,5,30,1,3,Normal,All,Whole grain bread with iron and fiber
+Sambusa,180,6,20,9,2,Normal,Snack,Protein-filled snack for energy
+Zilzil Tibs,360,34,6,22,1,Normal,Dinner,High protein for muscle maintenance
+Awaze Tibs,370,31,10,23,1,Normal,Lunch,Spicy protein dish for metabolism boost
+Derek Tibs,350,30,8,22,1,Normal,Dinner,Lean protein option with moderate fat
+Grilled Chicken Salad,280,32,12,12,4,Normal,Lunch,High protein balanced meal
+Atkilt Wot,180,5,25,8,6,Normal,Dinner,Balanced vegetable dish
+Misir Wot,260,12,38,6,8,Overweight,Lunch,High fiber low fat helps with weight loss
+Yekik Alicha,230,13,32,6,8,Overweight,Lunch,Filling high fiber meal for weight control
+Grilled Fish,200,35,0,6,0,Overweight,Dinner,Very high protein low calorie option
+Turkey Breast,180,30,0,4,0,Overweight,Lunch,Lean protein for weight management
+Enqulal Tibs,180,14,6,12,1,Overweight,Breakfast,High protein low carb for weight control
+Lebleb,160,9,22,4,6,Overweight,Snack,High protein low fat healthy snack
+Buticha,150,10,18,4,5,Overweight,Snack,Plant protein for weight management
+Baked Fish,180,32,0,5,0,Overweight,Dinner,Very lean protein dinner
+Shiro Light,200,12,28,5,6,Overweight,Lunch,Lower calorie plant protein option
+Yemisir Selata,170,10,25,4,7,Overweight,Dinner,High fiber low fat dinner option
+Dinich Wot Light,160,4,28,4,4,Overweight,Dinner,Moderate calories filling dinner
+Kinche Light,180,8,32,3,5,Overweight,Breakfast,Whole grain low fat breakfast option
+Gomen,120,4,12,7,4,Obese,Lunch,Very low calorie nutritious greens
+Tikil Gomen,140,4,18,6,5,Obese,Lunch,Low calorie filling vegetable dish
+Vegetable Soup,100,4,15,2,4,Obese,Lunch,Very low calorie filling soup
+Steamed Vegetables,80,3,15,1,5,Obese,Dinner,Lowest calorie filling option
+Salad Bowl,90,3,12,4,4,Obese,Lunch,Very low calorie high volume meal
+Ayib,100,8,3,6,0,Obese,Breakfast,Low calorie high protein
+Cucumber Salad,50,1,8,2,2,Obese,Snack,Extremely low calorie refreshing
+Steamed Fish,140,28,0,3,0,Obese,Dinner,Lowest calorie protein option
+Apple Slices,60,0,15,0,3,Obese,Snack,Low calorie healthy snack
+Carrot Sticks,40,1,9,0,3,Obese,Snack,Very low calorie crunchy snack
+Gomen Plain,80,3,10,4,4,Obese,Dinner,Very low calorie greens
+Fossolia,100,4,14,4,5,Obese,Dinner,Very low calorie vegetable side
+Yatakilt Kilkil,130,4,20,5,5,Obese,Dinner,Low calorie filling vegetables
+Vegetable Stir Fry,110,4,16,4,5,Obese,Dinner,Low calorie filling dinner
+Oatmeal Plain,150,5,27,3,4,Obese,Breakfast,Very low calorie filling breakfast
+Egg White Omelette,120,18,2,4,0,Obese,Breakfast,High protein zero fat breakfast
