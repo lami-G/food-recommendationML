@@ -51,7 +51,7 @@ def train_classifier(df):
     X_test_scaled = scaler.transform(X_test)
     
     # Train KNN
-    knn = KNeighborsClassifier(n_neighbors=3)  # Changed from 5 to 3
+    knn = KNeighborsClassifier(n_neighbors=3)  
     knn.fit(X_train_scaled, y_train)
     
     # Calculate accuracy
