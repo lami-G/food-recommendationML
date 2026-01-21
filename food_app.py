@@ -180,6 +180,11 @@ with tab1:
     # Input section - full width
     st.markdown("#### 📊 Enter Food Nutrition")
     
+    # Food name input (optional)
+    food_name = st.text_input("🍽️ Food Name (optional)", 
+                             placeholder="e.g., Chicken Salad, Pasta, etc.", 
+                             help="Enter a name for your food (optional - for display purposes only)")
+    
     # Create columns for input fields
     col1, col2, col3, col4, col5 = st.columns(5)
     
@@ -216,7 +221,10 @@ with tab1:
         
         # Create clean structured results display
         st.markdown("---")
-            
+        
+        # Determine display name
+        display_name = food_name.strip() if food_name.strip() else "Your Food"
+        
         # Large prediction card with gradient
         st.markdown(f"""
         <div style="
@@ -230,7 +238,10 @@ with tab1:
             margin: 20px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         ">
-            {emoji} PREDICTION: {predicted_category.upper()}
+            🍽️ {display_name.upper()}<br>
+            <div style="font-size: 20px; margin-top: 10px;">
+                {emoji} PREDICTED: {predicted_category.upper()}
+            </div>
         </div>
         """, unsafe_allow_html=True)
         
