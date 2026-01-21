@@ -57,7 +57,7 @@ streamlit run food_app.py
 
 - **Algorithm**: K-Nearest Neighbors (K=3) for both classification and recommendation
 - **Preprocessing**: StandardScaler for feature normalization
-- **Training Split**: 70% training (~38 foods) / 30% testing (~16 foods)
+- **Training Split**: 70% training (~82 foods) / 30% testing (36~ foods)
 - **Distance Metric**: Euclidean distance for similarity matching
 - **Features**: [Calories, Protein, Carbs, Fat, Fiber]
 - **Tie-Breaking**: Distance-based resolution when vote counts are equal
@@ -78,18 +78,16 @@ streamlit run food_app.py
 - 🔴 **Obese**: 16 low-calorie foods (40-150 cal)
 
 ### By Meal Time:
-- � **Breaekfast**: 12 foods (Genfo, Firfir, Ful Medames, etc.)
-- ☀️ **Lunch**: 17 foods (Doro Wot, Shiro, Tibs, etc.)
-- � **Dinner*l*: 17 foods (Kitfo, Grilled Fish, Steamed Vegetables, etc.)
-- 🍿 **Snacks**: 7 foods (Kolo, Sambusa, Lebleb, etc.)
-- 🍞 **All Meals**: 1 food (Injera - Ethiopian staple bread)
+- � **Breaekfast**:
+- ☀️ **Lunch**: 
+- � **Dinner*l*: 
+- 🍞 **All Meals**: 
 
 **File**: `data/foods.csv` with columns: Name, Calories, Protein, Carbs, Fat, Fiber, BMICategory, MealTime, Reason
 
 ## 📚 Educational Materials
 
 - **`MyLab2_Food_Class.ipynb`**: Interactive Jupyter notebook with step-by-step KNN learning
-- **`MyLab2_Explanation.md`**: Comprehensive beginner's guide explaining every concept
 
 ## 🎯 Key Learning Concepts
 
